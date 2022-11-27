@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Ventas_MVC.Categorias>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre_categoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion_categoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usuario_inserta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_inserta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usuario_actualiza)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_actualiza)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre_categoria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion_categoria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usuario_inserta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_inserta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usuario_actualiza)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_actualiza)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_categoria }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_categoria }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_categoria })
+        </td>
+    </tr>
+}
+
+</table>

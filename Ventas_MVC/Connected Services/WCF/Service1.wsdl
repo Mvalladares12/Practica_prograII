@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/WCFVentas" />
+      <xs:element name="InicioSesion">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WCFVentas" minOccurs="0" name="datos" nillable="true" type="q1:RespuestaUsuario" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InicioSesionResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WCFVentas" minOccurs="0" name="InicioSesionResult" nillable="true" type="q2:RespuestaUsuario" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GuardarVentas">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WCFVentas" minOccurs="0" name="datos" nillable="true" type="q3:Ventas" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GuardarVentasResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WCFVentas" minOccurs="0" name="GuardarVentasResult" nillable="true" type="q4:Ventas" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="VerVenta">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WCFVentas" minOccurs="0" name="ver" nillable="true" type="q5:Detalles" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="VerVentaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WCFVentas" minOccurs="0" name="VerVentaResult" nillable="true" type="q6:Detalles" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="creausuario">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WCFVentas" minOccurs="0" name="datos" nillable="true" type="q7:GuardaUser" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="creausuarioResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WCFVentas" minOccurs="0" name="creausuarioResult" nillable="true" type="q8:GuardaUser" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="editar">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WCFVentas" minOccurs="0" name="datos" nillable="true" type="q9:EditarUser" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="editarResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WCFVentas" minOccurs="0" name="editarResult" nillable="true" type="q10:EditarUser" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="eliminar">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WCFVentas" minOccurs="0" name="datos" nillable="true" type="q11:EliminarUser" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="eliminarResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/WCFVentas" minOccurs="0" name="eliminarResult" nillable="true" type="q12:EliminarUser" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WCFVentas" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCFVentas" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="RespuestaUsuario">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Contrasena" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NombreUsuario" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="RespuestaUsuario" nillable="true" type="tns:RespuestaUsuario" />
+      <xs:complexType name="Ventas">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Cliente" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FechaI" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Producto" type="xs:int" />
+          <xs:element minOccurs="0" name="Vendedor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cantidad" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Ventas" nillable="true" type="tns:Ventas" />
+      <xs:complexType name="Detalles">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Fecha" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Id_venta" type="xs:int" />
+          <xs:element minOccurs="0" name="Producto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Vendedor" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Detalles" nillable="true" type="tns:Detalles" />
+      <xs:complexType name="GuardaUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Contraseña" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fecha_Inserta" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Nombre_Usuario" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Usuario_Inserta" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GuardaUser" nillable="true" type="tns:GuardaUser" />
+      <xs:complexType name="EditarUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Contraseña" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id_usuario" type="xs:int" />
+          <xs:element minOccurs="0" name="Nombre_usuario" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Usuario_actualiza" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Usuario_inserta" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="EditarUser" nillable="true" type="tns:EditarUser" />
+      <xs:complexType name="EliminarUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id_usuario" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="EliminarUser" nillable="true" type="tns:EliminarUser" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_InicioSesion_InputMessage">
+    <wsdl:part name="parameters" element="tns:InicioSesion" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InicioSesion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InicioSesionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GuardarVentas_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarVentas" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GuardarVentas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarVentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VerVenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerVenta" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VerVenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_creausuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:creausuario" />
+  </wsdl:message>
+  <wsdl:message name="IService1_creausuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:creausuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_editar_InputMessage">
+    <wsdl:part name="parameters" element="tns:editar" />
+  </wsdl:message>
+  <wsdl:message name="IService1_editar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:editarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_eliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:eliminar" />
+  </wsdl:message>
+  <wsdl:message name="IService1_eliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:eliminarResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="InicioSesion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InicioSesion" message="tns:IService1_InicioSesion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InicioSesionResponse" message="tns:IService1_InicioSesion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarVentas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GuardarVentas" message="tns:IService1_GuardarVentas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GuardarVentasResponse" message="tns:IService1_GuardarVentas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerVenta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/VerVenta" message="tns:IService1_VerVenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/VerVentaResponse" message="tns:IService1_VerVenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="creausuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/creausuario" message="tns:IService1_creausuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/creausuarioResponse" message="tns:IService1_creausuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="editar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/editar" message="tns:IService1_editar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/editarResponse" message="tns:IService1_editar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/eliminar" message="tns:IService1_eliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/eliminarResponse" message="tns:IService1_eliminar_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InicioSesion">
+      <soap:operation soapAction="http://tempuri.org/IService1/InicioSesion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarVentas">
+      <soap:operation soapAction="http://tempuri.org/IService1/GuardarVentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerVenta">
+      <soap:operation soapAction="http://tempuri.org/IService1/VerVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="creausuario">
+      <soap:operation soapAction="http://tempuri.org/IService1/creausuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editar">
+      <soap:operation soapAction="http://tempuri.org/IService1/editar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminar">
+      <soap:operation soapAction="http://tempuri.org/IService1/eliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:53606/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

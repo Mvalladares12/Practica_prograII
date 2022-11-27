@@ -1,0 +1,72 @@
+﻿@model Ventas_MVC.Categorias
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>¿Estas seguro que deseas eliminar esto?</h3>
+<div>
+    <h4>Categorias</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre_categoria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_categoria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion_categoria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion_categoria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.usuario_inserta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuario_inserta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_inserta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_inserta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.usuario_actualiza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuario_actualiza)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_actualiza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_actualiza)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

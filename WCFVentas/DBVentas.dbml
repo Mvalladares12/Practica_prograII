@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Ventas_progra2" Class="DBVentasDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-FUKI3JG;Initial Catalog=Ventas_progra2;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Ventas_progra2ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Ventas" Member="Ventas">
+    <Type Name="Ventas">
+      <Column Name="id_venta" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_producto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fecha_venta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Usuario_venta" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="usuario_inserta" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="fecha_inserta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="usuario_actualiza" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="fecha_actualiza" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Usuarios" Member="Usuarios">
+    <Type Name="Usuarios">
+      <Column Name="id_usuario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Contraseña" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="usuario_inserta" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="fecha_inserta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="usuario_actualiza" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="fecha_actualiza" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Nombre_usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.V_ventas" Member="V_ventas">
+    <Type Name="V_ventas">
+      <Column Name="id_venta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre_producto" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Fecha_venta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="usuario_inserta" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.SP_InsertarVenta" Method="SP_InsertarVenta">
+    <Parameter Name="id_producto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FechaVenta" Parameter="fechaVenta" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FechaInserta" Parameter="fechaInserta" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="cliente" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="cantidad" Type="System.Int32" DbType="Int" />
+    <Parameter Name="vendedor" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_InsertarUsuario" Method="SP_InsertarUsuario">
+    <Parameter Name="usuario" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="contraseña" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="usuarioinserta" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FechaInserta" Parameter="fechaInserta" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Nombre_user" Parameter="nombre_user" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_EditarUsuario" Method="SP_EditarUsuario">
+    <Parameter Name="idusuario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="usuario" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="contraseña" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="usuarioinserta" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Nombre_user" Parameter="nombre_user" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="usuario_act" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="SP_EditarUsuarioResult">
+      <Column Name="Error" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_EliminarUser" Method="SP_EliminarUser">
+    <Parameter Name="id_usuario" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

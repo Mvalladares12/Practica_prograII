@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Principal.master.cs" Inherits="Ejercicio_MasterPage.Principal" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+
+            <%--menu--%>
+            <div class="row" style="background-color:darkred">
+                <div class="col-4">
+                    logo
+                </div>
+
+                <div class="col-8">
+                    <center>
+                        <h2>menu</h2>
+                    </center>
+                </div>
+            </div>
+
+            <%--contenido--%>
+            <div class="row" style="background-color:#eaeaea">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+            <%--footer--%>
+            <div class="row" style="background-color:cornflowerblue">
+                <footer class="modal-footer">
+                    <b style="color:white">Todos los derechos reservados</b>
+                </footer>
+            </div>
+            
+        </div>
+    </form>
+</body>
+</html>
